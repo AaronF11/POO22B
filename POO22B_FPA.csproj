@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C0FA912-C4AB-4DD4-83F9-B7848A5E155E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POO22B_FPA</RootNamespace>
+    <AssemblyName>POO22B_FPA</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomControlsDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Class\CCliente.cs" />
+    <Compile Include="src\Class\CError.cs" />
+    <Compile Include="src\Class\CPelota.cs" />
+    <Compile Include="DlgPracticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgPracticas.Designer.cs">
+      <DependentUpon>DlgPracticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgPrincipal.Designer.cs">
+      <DependentUpon>DlgPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Class\CPersona.cs" />
+    <Compile Include="src\DlgsMenu\DlgMoreInfoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsMenu\DlgMoreInfoMenu.Designer.cs">
+      <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DlgPracticas.resx">
+      <DependentUpon>DlgPracticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgPrincipal.resx">
+      <DependentUpon>DlgPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="src\DlgsMenu\DlgMoreInfoMenu.resx">
+      <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_doorbell_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sphere_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sphere_18px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sphere_18px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_forward_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_forward_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_forward_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_opened_folder_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_light_on_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_light_off_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_manual_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_document_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pie_chart_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_start_menu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_opened_folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Visual_Studio_32px.png" />
+    <None Include="Resources\icons8_c_sharp_logo_2_32px.png" />
+    <None Include="Resources\Profile.jpg" />
+    <Content Include="src\CustomControlsDLL.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
