@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="POO22B_FPA.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">17, 16, 29</Value>
+    </Setting>
+    <Setting Name="ButtonsBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">17, 16, 40</Value>
+    </Setting>
+    <Setting Name="LettersForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="SubMenusBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">17, 16, 29</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

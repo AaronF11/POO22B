@@ -77,9 +77,6 @@ namespace POO22B_FPA
         {
             this.Hide();
             DlgPracticas dlgPracticas = new DlgPracticas();
-            if (CodeColor == 0) dlgPracticas.BackColor = Color.FromArgb(255, 255, 255);
-            if (CodeColor == 1) dlgPracticas.BackColor = Color.FromArgb(17, 16, 29);
-            if (CodeColor == 2) dlgPracticas.BackColor = Color.FromArgb(47, 73, 208);
             dlgPracticas.Show();
 
         }
@@ -185,11 +182,13 @@ namespace POO22B_FPA
             switch (CodeColor)
             {
                 case 0:
+                    //Definición de colores y recursos
                     Background = Color.FromArgb(255, 255, 255);
                     Letters = Color.FromArgb(17, 16, 29);
                     ButtonsBackground = Color.FromArgb(33, 105, 246);
                     SubMenuBackground = Color.FromArgb(255, 255, 255);
                     PtbLogoMenu.BackgroundImage = Properties.Resources.icons8_forward_64px_1;
+                    //Asignación a componentes
                     this.BackColor = Background;
                     BtnPracticesMenu.ForeColor = Letters;
                     BtnToolsMenu.ForeColor = Letters;
@@ -210,14 +209,25 @@ namespace POO22B_FPA
                     CCPtbProfileMenu.BorderColor2 = Color.RoyalBlue;
                     LblProfileMenu.ForeColor = Color.RoyalBlue;
                     this.CodeColor = CodeColor;
+                    //Almacenamiento de colores para uso en DlgPracticas
+                    Properties.Settings.Default.BackColor = Background;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.ButtonsBackColor = ButtonsBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.SubMenusBackColor = SubMenuBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.LettersForeColor = Letters;
+                    Properties.Settings.Default.Save();
                     break;
 
                 case 1:
+                    //Definición de colores y recursos
                     Background = Color.FromArgb(17, 16, 29);
                     Letters = Color.FromArgb(255, 255, 255);
                     ButtonsBackground = Color.FromArgb(17, 16, 40);
                     SubMenuBackground = Color.FromArgb(17, 16, 29);
                     PtbLogoMenu.BackgroundImage = Properties.Resources.icons8_forward_64px_1;
+                    //Asignación a componentes
                     this.BackColor = Background;
                     BtnPracticesMenu.ForeColor = Letters;
                     BtnToolsMenu.ForeColor = Letters;
@@ -238,13 +248,24 @@ namespace POO22B_FPA
                     CCPtbProfileMenu.BorderColor2 = Color.RoyalBlue;
                     LblProfileMenu.ForeColor = Color.RoyalBlue;
                     this.CodeColor = CodeColor;
+                    //Almacenamiento de colores para uso en DlgPracticas
+                    Properties.Settings.Default.BackColor = Background;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.ButtonsBackColor = ButtonsBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.SubMenusBackColor = SubMenuBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.LettersForeColor = Letters;
+                    Properties.Settings.Default.Save();
                     break;
                 case 2:
+                    //Definición de colores y recursos
                     Background = Color.FromArgb(47, 73, 208);
                     Letters = Color.FromArgb(255, 255, 255);
                     ButtonsBackground = Color.FromArgb(26, 43, 130);
                     SubMenuBackground = Color.FromArgb(47, 73, 208);
                     PtbLogoMenu.BackgroundImage = Properties.Resources.icons8_forward_64px;
+                    //Asignación a componentes
                     this.BackColor = Background;
                     BtnPracticesMenu.ForeColor = Letters;
                     BtnToolsMenu.ForeColor = Letters;
@@ -265,6 +286,15 @@ namespace POO22B_FPA
                     CCPtbProfileMenu.BorderColor2 = Letters;
                     LblProfileMenu.ForeColor = Letters;
                     this.CodeColor = CodeColor;
+                    //Almacenamiento de colores para uso en DlgPracticas
+                    Properties.Settings.Default.BackColor = Background;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.ButtonsBackColor = ButtonsBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.SubMenusBackColor = SubMenuBackground;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.LettersForeColor = Letters;
+                    Properties.Settings.Default.Save();
                     break;
             }
         }

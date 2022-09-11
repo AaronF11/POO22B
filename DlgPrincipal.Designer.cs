@@ -362,10 +362,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(284, 561);
+            this.ControlBox = false;
             this.Controls.Add(this.PnlButtonsListMenu);
             this.Controls.Add(this.PtbLogoMenu);
             this.Controls.Add(this.FlpTopButtonsMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DlgPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
