@@ -1,16 +1,11 @@
 ﻿using POO22B_FPA.src.Class;
+using POO22B_FPA.src.DlgsMenu;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace POO22B_FPA
 {
@@ -23,7 +18,8 @@ namespace POO22B_FPA
         //---------------------------------------------------------------------
         //Atributos.
         //---------------------------------------------------------------------
-        private List<Thread> Procesos;
+        public List<CMeta> Metas;
+        public static DlgPracticas Instancia;
 
         //---------------------------------------------------------------------
         //Constructor.
@@ -31,8 +27,12 @@ namespace POO22B_FPA
         public DlgPracticas()
         {
             InitializeComponent();
+
             CheckForIllegalCrossThreadCalls = false;
-            Procesos = new List<Thread>();
+
+            Metas = new List<CMeta>();
+
+            Instancia = this;
         }
 
         #region Eventos de tamaño de la ventana
@@ -84,9 +84,9 @@ namespace POO22B_FPA
         private void DlgPracticas_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.Reset();
-            foreach (Thread Proceso in Procesos)
+            foreach (CMeta Proceso in Metas)
             {
-                Proceso.Abort();
+                Proceso.Termina();
             }
         }
 
@@ -126,6 +126,16 @@ namespace POO22B_FPA
             P2BtnPY.ForeColor = Properties.Settings.Default.LettersForeColor;
 
             //Tap 3
+            P3PnlBotones.BackColor = Properties.Settings.Default.SubMenusBackColor;
+            P3BtnObtenerMetas.BackColor = Properties.Settings.Default.ButtonsBackColor;
+            P3BtnObtenerMetas.ForeColor = Properties.Settings.Default.LettersForeColor;
+            P3BtnLimpiarDgv.BackColor = Properties.Settings.Default.ButtonsBackColor;
+            P3BtnLimpiarDgv.ForeColor = Properties.Settings.Default.LettersForeColor;
+            P3DgvMetasInfo.BackgroundColor = Properties.Settings.Default.SubMenusBackColor;
+            P3DgvMetasInfo.DefaultCellStyle.BackColor = Properties.Settings.Default.ButtonsBackColor;
+            P3DgvMetasInfo.DefaultCellStyle.ForeColor = Properties.Settings.Default.LettersForeColor;
+            P3DgvMetasInfo.ColumnHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.SubMenusBackColor;
+            P3DgvMetasInfo.ColumnHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.LettersForeColor;
 
             //Tap 4
 
@@ -157,6 +167,31 @@ namespace POO22B_FPA
 
             MessageBox.Show(MiPelota1.Inflar(5).GetMessage());
             MessageBox.Show(MiPelota2.Inflar(7).GetMessage());
+
+            //Thread HiloPrueba;
+
+            //HiloPrueba = new Thread(() =>
+            //{
+            //    for (int i = 0; i < 5; i++)
+            //    {
+            //        CMeta Meta;
+
+            //        Meta = new CMeta(10, 10, P2PnlContenedor)
+            //        {
+            //            BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Sur-Este.png"),
+            //            BackgroundImageLayout = ImageLayout.Stretch
+            //        };
+
+            //        Meta.Enciende();
+            //        Meta.Eleva(10);
+            //        Meta.Desplazar(1);
+
+            //        Drones.Add(Meta);
+            //        Thread.Sleep(2000);
+            //    }
+            //});
+
+            //HiloPrueba.Start();
         }
 
         //---------------------------------------------------------------------
@@ -181,99 +216,109 @@ namespace POO22B_FPA
         #endregion
 
         #region Práctica 2
+
+        //---------------------------------------------------------------------
+        //Botón de dron en desplazamiento sobre eje X.
+        //---------------------------------------------------------------------
+        private void P2BtnPX_Click(object sender, EventArgs e)
+        {
+            CMeta Meta;
+
+            Meta = new CMeta(0, 0, P2PnlContenedor)
+            {
+                BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Este.png"),
+                BackgroundImageLayout = ImageLayout.Stretch
+            };
+
+            Meta.Enciende();
+            Meta.Eleva(0);
+            Meta.EjeX(1);
+
+            Metas.Add(Meta);
+        }
+
+        //---------------------------------------------------------------------
+        //Botón de dron en desplazamiento sobre eje X.
+        //---------------------------------------------------------------------
+        private void P2BtnPY_Click(object sender, EventArgs e)
+        {
+            CMeta Meta;
+
+            Meta = new CMeta(0, 0, P2PnlContenedor)
+            {
+                BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Sur.png"),
+                BackgroundImageLayout = ImageLayout.Stretch
+            };
+
+            Meta.Enciende();
+            Meta.Eleva(0);
+            Meta.EjeY(1);
+
+            Metas.Add(Meta);
+        }
+
         //---------------------------------------------------------------------
         //Pruebas de diagonales en sesión C8.
         //---------------------------------------------------------------------
         private void P2BtnPD_Click(object sender, EventArgs e)
         {
             CMeta Meta;
-            Thread ProcesoEjecucion;
-            Random r = new Random();
-            int R = r.Next(0, 256);
-            int G = r.Next(0, 256);
-            int B = r.Next(0, 256);
 
-            Meta = new CMeta(r.Next(1, 3));
-            Meta.BackColor = Color.FromArgb(R, G, B);
-            Meta.BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\icons8_twitter_32px.png");
-            Meta.BackgroundImageLayout = ImageLayout.Stretch;
-            Meta.Location = new Point(10,10);
-            Meta.Name = "P2PtxMeta";
-            Meta.Size = new Size(32,32);
-            P2PnlContenedor.Controls.Add(Meta);
-            Meta.BringToFront();
-
-            ProcesoEjecucion = new Thread(() =>
+            Meta = new CMeta(10, 10, P2PnlContenedor)
             {
-                bool Norte = false;
-                bool Sur = true;
-                bool Este = true;
-                bool Oeste = false;
+                BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Sur-Este.png"),
+                BackgroundImageLayout = ImageLayout.Stretch
+            };
 
-                int X;
-                int Y;
+            Meta.Enciende();
+            Meta.Eleva(10);
+            Meta.Desplazar(1);
 
-                X = Meta.Location.X;
-                Y = Meta.Location.Y;
+            Metas.Add(Meta);
+        }
+        #endregion
 
-                while (true)
-                {
-                    if (Norte)
-                    {
-                        Y = Y - 1;
-                    }
+        #region Práctica 3
+        //---------------------------------------------------------------------
+        //Botón para limpiar la tabla de los metas.
+        //---------------------------------------------------------------------
+        private void P3BtnLimpiarDgv_Click(object sender, EventArgs e)
+        {
+            P3DgvMetasInfo.Rows.Clear();
+        }
 
-                    if (Sur)
-                    {
-                        Y = Y + 1;
-                    }
+        //---------------------------------------------------------------------
+        //Botón para obtener los datos de los Metas.
+        //---------------------------------------------------------------------
+        private void P3BtnObtenerMetas_Click(object sender, EventArgs e)
+        {
+            P3DgvMetasInfo.Rows.Clear();
 
-                    if (Este)
-                    {
-                        X = X + 1;
-                    }
+            for (int i = 0; i < P2PnlContenedor.Controls.Count; i++)
+            {
+                P3DgvMetasInfo.Rows.Add();
+                P3DgvMetasInfo.Rows[i].Cells[0].Value = Metas[i].Name + (" - "+ i);
+                P3DgvMetasInfo.Rows[i].Cells[1].Value = Metas[i].Location.X;
+                P3DgvMetasInfo.Rows[i].Cells[2].Value = Metas[i].Location.Y;
+                P3DgvMetasInfo.Rows[i].Cells[3].Value = Metas[i].BackColor;
+                P3DgvMetasInfo.Rows[i].Cells[3].Style.BackColor = Metas[i].BackColor;
+                P3DgvMetasInfo.Rows[i].Cells[4].Value = Metas[i].Apagando;
+            }
+        }
 
-                    if (Oeste)
-                    {
-                        X = X - 1;
-                    }
+        private void P3DgvMetasInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Metas[e.RowIndex].Detener((bool)P3DgvMetasInfo.CurrentCell.Value);
+            }
+            catch (Exception) { }
+        }
 
-                    if (Y <= 0)
-                    {
-                        Norte = false;
-                        Sur = true;
-                        Meta.BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Sur.png");
-                    }
-
-                    if (X <= 0)
-                    {
-                        Oeste = false;
-                        Este = true;
-                        Meta.BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Este.png");
-                    }
-
-                    if (X >= P2PnlContenedor.Width - 32)
-                    {
-                        Oeste = true;
-                        Este = false;
-                        Meta.BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Oeste.png");
-                    }
-
-                    if (Y >= P2PnlContenedor.Height - 32)
-                    {
-                        Norte = true;
-                        Sur = false;
-                        Meta.BackgroundImage = Image.FromFile(@"C:\Users\aaron\source\repos\POO22B_FPA\Resources\Norte.png");
-                    }
-
-                    Thread.Sleep(Meta.Velocidad);
-                    Meta.Location = new Point(X,Y);
-                }
-            });
-
-            ProcesoEjecucion.Start();
-            Procesos.Add(ProcesoEjecucion);
-            //MessageBox.Show("Proceso iniciado.");
+        private void Tp2_Click(object sender, EventArgs e)
+        {
+            DlgPractica3 dlgPractica3 = new DlgPractica3();
+            dlgPractica3.Show();
         }
         #endregion
     }

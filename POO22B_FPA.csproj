@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>POO22B_FPA.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomControlsDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
@@ -96,6 +96,12 @@
     <Compile Include="src\DlgsMenu\DlgMoreInfoMenu.Designer.cs">
       <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\DlgsMenu\DlgPractica3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsMenu\DlgPractica3.Designer.cs">
+      <DependentUpon>DlgPractica3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DlgPracticas.resx">
       <DependentUpon>DlgPracticas.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="src\DlgsMenu\DlgMoreInfoMenu.resx">
       <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsMenu\DlgPractica3.resx">
+      <DependentUpon>DlgPractica3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
