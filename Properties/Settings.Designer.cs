@@ -37,7 +37,7 @@ namespace POO22B_FPA.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("17, 16, 40")]
+        [global::System.Configuration.DefaultSettingValueAttribute("17, 16, 70")]
         public global::System.Drawing.Color ButtonsBackColor {
             get {
                 return ((global::System.Drawing.Color)(this["ButtonsBackColor"]));
@@ -68,6 +68,18 @@ namespace POO22B_FPA.Properties {
             }
             set {
                 this["SubMenusBackColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Name {
+            get {
+                return ((string)(this["Name"]));
+            }
+            set {
+                this["Name"] = value;
             }
         }
     }

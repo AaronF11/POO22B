@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Costura.Fody.3.3.3\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" />
+  <Import Project="packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('packages\SQLite.3.13.0\build\net45\SQLite.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +29,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,9 +55,188 @@
     <StartupObject>POO22B_FPA.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.1.5.3.1.0.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
+    </Reference>
     <Reference Include="CustomControlsDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.AccessControl.6.0.0\lib\net461\Microsoft.Win32.Registry.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.SystemEvents.6.0.0\lib\net461\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Odbc, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.Odbc.6.0.0\lib\net461\System.Data.Odbc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OleDb, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.OleDb.6.0.0\lib\net461\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.EventLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.EventLog.6.0.0\lib\net461\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.PerformanceCounter.6.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes.AccessControl, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipes.AccessControl.5.0.0\lib\net461\System.IO.Pipes.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Ports, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Ports.6.0.0\lib\net461\System.IO.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Cng.5.0.0\lib\net47\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Pkcs.6.0.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.ProtectedData.6.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Xml.6.0.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Duplex, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Duplex.4.9.0\lib\net461\System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Http.4.9.0\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.NetTcp.4.9.0\lib\net461\System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Primitives.4.9.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Security.4.9.0\lib\net461\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Syndication, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Syndication.6.0.0\lib\net461\System.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ServiceProcess.ServiceController, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceProcess.ServiceController.6.0.0\lib\net461\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.6.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.AccessControl.6.0.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,67 +246,227 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=5.81.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Twilio.5.81.1\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Settings.cs" />
-    <Compile Include="src\Class\CCliente.cs" />
-    <Compile Include="src\Class\CError.cs" />
-    <Compile Include="src\Class\CMeta.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="src\Class\CMeta.Designer.cs">
+    <Compile Include="Settings.cs" />
+    <Compile Include="src\Class\P0\CCliente.cs" />
+    <Compile Include="src\Class\P0\CError.cs" />
+    <Compile Include="src\Class\P10\CAlertas.cs" />
+    <Compile Include="src\Class\P10\CDataBase.cs" />
+    <Compile Include="src\Class\P2 y P3\CMeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\Class\P2 y P3\CMeta.Designer.cs">
       <DependentUpon>CMeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Class\CPelota.cs" />
-    <Compile Include="DlgPracticas.cs">
+    <Compile Include="src\Class\P0\CPelota.cs" />
+    <Compile Include="src\Class\P4\SubsCAnimal\CPersona.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P5\CCuadrilatero.cs" />
+    <Compile Include="src\Class\P5\CElipse.cs" />
+    <Compile Include="src\Class\P5\CFigura.cs" />
+    <Compile Include="src\Class\P5\CLinea.cs" />
+    <Compile Include="src\DlgsPracticas\DlgPracticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DlgPracticas.Designer.cs">
+    <Compile Include="src\DlgsPracticas\DlgPracticas.Designer.cs">
       <DependentUpon>DlgPracticas.cs</DependentUpon>
     </Compile>
-    <Compile Include="DlgPrincipal.cs">
+    <Compile Include="src\DlgsMenu\DlgPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DlgPrincipal.Designer.cs">
+    <Compile Include="src\DlgsMenu\DlgPrincipal.Designer.cs">
       <DependentUpon>DlgPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Class\CPersona.cs" />
+    <Compile Include="src\Class\P0\CPersonaPrueba.cs" />
+    <Compile Include="src\Class\P4\CAnimal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\SubsCAnimal\CCordado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\CBacteria.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\CHongo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\CProtoctista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\CSerVivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\CVegetal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\SubsCAnimal\CHominidae.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\SubsCAnimal\CHomoSapien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\SubsCAnimal\CMammalia.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\Class\P4\SubsCAnimal\CPrimate.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\DlgsMenu\DlgMoreInfoMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\DlgsMenu\DlgMoreInfoMenu.Designer.cs">
       <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\DlgsMenu\DlgPractica3.cs">
+    <Compile Include="src\DlgsPracticas\P10\DlgAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\DlgsMenu\DlgPractica3.Designer.cs">
-      <DependentUpon>DlgPractica3.cs</DependentUpon>
+    <Compile Include="src\DlgsPracticas\P10\DlgAlumnos.Designer.cs">
+      <DependentUpon>DlgAlumnos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DlgPracticas.resx">
+    <Compile Include="src\DlgsPracticas\P10\DlgContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgContainer.Designer.cs">
+      <DependentUpon>DlgContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgDocente.Designer.cs">
+      <DependentUpon>DlgDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgEdificios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgEdificios.Designer.cs">
+      <DependentUpon>DlgEdificios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgEquiposIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgEquiposIT.Designer.cs">
+      <DependentUpon>DlgEquiposIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgMaestros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgMaestros.Designer.cs">
+      <DependentUpon>DlgMaestros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgMain.Designer.cs">
+      <DependentUpon>DlgMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgRecoverPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgRecoverPassword.Designer.cs">
+      <DependentUpon>DlgRecoverPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgRegister.designer.cs">
+      <DependentUpon>DlgRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgRegister1.Designer.cs">
+      <DependentUpon>DlgRegister.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgLogin.designer.cs">
+      <DependentUpon>DlgLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P10\DlgLogin1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DlgLogin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P3\DlgMonitorDrones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P3\DlgMonitorDrones.Designer.cs">
+      <DependentUpon>DlgMonitorDrones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P5\DlgFiguras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DlgsPracticas\P5\DlgFiguras.Designer.cs">
+      <DependentUpon>DlgFiguras.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\DlgsPracticas\DlgPracticas.resx">
       <DependentUpon>DlgPracticas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DlgPrincipal.resx">
+    <EmbeddedResource Include="src\DlgsMenu\DlgPrincipal.resx">
       <DependentUpon>DlgPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="src\DlgsMenu\DlgMoreInfoMenu.resx">
       <DependentUpon>DlgMoreInfoMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\DlgsMenu\DlgPractica3.resx">
-      <DependentUpon>DlgPractica3.cs</DependentUpon>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgAlumnos.resx">
+      <DependentUpon>DlgAlumnos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgContainer.resx">
+      <DependentUpon>DlgContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgDocente.resx">
+      <DependentUpon>DlgDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgEdificios.resx">
+      <DependentUpon>DlgEdificios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgEquiposIT.resx">
+      <DependentUpon>DlgEquiposIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgMaestros.resx">
+      <DependentUpon>DlgMaestros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgMain.resx">
+      <DependentUpon>DlgMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgRecoverPassword.resx">
+      <DependentUpon>DlgRecoverPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgRegister.resx">
+      <DependentUpon>DlgRegister.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DlgRegister1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P10\DlgLogin.resx">
+      <DependentUpon>DlgLogin.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DlgLogin1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P3\DlgMonitorDrones.resx">
+      <DependentUpon>DlgMonitorDrones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\DlgsPracticas\P5\DlgFiguras.resx">
+      <DependentUpon>DlgFiguras.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -207,6 +550,104 @@
     <None Include="Resources\Oeste.png" />
     <None Include="Resources\Sur.png" />
     <None Include="Resources\Este.png" />
+    <None Include="Resources\icons8_edit_property_1.ico" />
+    <None Include="Resources\icons8_gailan_48px.png" />
+    <None Include="Resources\icons8_bear_footprint_48px.png" />
+    <None Include="Resources\icons8_pawprints_48px.png" />
+    <None Include="Resources\icons8_wing_48px.png" />
+    <None Include="Resources\icons8_wings_48px.png" />
+    <None Include="Resources\icons8_tail_of_whale_48px.png" />
+    <None Include="Resources\icons8_grass_48px.png" />
+    <None Include="Resources\icons8_vegetarian_mark_48px.png" />
+    <None Include="Resources\icons8_oak_tree_48px.png" />
+    <None Include="Resources\icons8_coco_tree_48px.png" />
+    <None Include="Resources\icons8_willow_48px.png" />
+    <None Include="Resources\icons8_i_skin_type_1_48px_1.png" />
+    <None Include="Resources\icons8_i_skin_type_5_48px.png" />
+    <None Include="Resources\P4Logo1.png" />
+    <None Include="Resources\icons8_X_32px.png" />
+    <None Include="Resources\icons8_Y_32px.png" />
+    <None Include="Resources\icons8_Meta_32px_1.png" />
+    <None Include="Resources\icons8_broom_32px.png" />
+    <None Include="Resources\icons8_maximize_window_32px.png" />
+    <None Include="Resources\icons8_play_32px.png" />
+    <None Include="Resources\icons8_pause_32px.png" />
+    <None Include="Resources\icons8_available_updates_32px.png" />
+    <None Include="Resources\icons8_biotech_32px.png" />
+    <None Include="Resources\icons8_data_sheet_32px.png" />
+    <None Include="Resources\icons8_street_view_32px.png" />
+    <None Include="Resources\icons8_empty_trash_32px.png" />
+    <None Include="Resources\icons8_dog_32px.png" />
+    <None Include="Resources\icons8_organic_food_32px.png" />
+    <None Include="Resources\Logo-2-removebg-preview.png" />
+    <None Include="Resources\icons8_mushroom_48px.png" />
+    <None Include="Resources\icons8_amanita_48px.png" />
+    <None Include="Resources\icons8_algae_48px.png" />
+    <None Include="Resources\icons8_algae_30px.png" />
+    <None Include="Resources\icons8_bacteria_48px.png" />
+    <None Include="Resources\icons8_microorganisms_48px.png" />
+    <None Include="Resources\icons8_virus_48px.png" />
+    <None Include="Resources\icons8_coronavirus_48px.png" />
+    <None Include="Resources\icons8_male_user.ico" />
+    <None Include="Resources\icons8_wildlife_animals.ico" />
+    <None Include="Resources\icons8_vegetarian_mark.ico" />
+    <None Include="Resources\icons8_algae.ico" />
+    <None Include="Resources\icons8_amanita.ico" />
+    <None Include="Resources\icons8_bacteria.ico" />
+    <None Include="Resources\icons8_mushroom_cloud_32px.png" />
+    <None Include="Resources\icons8_hydroelectric_32px.png" />
+    <None Include="Resources\icons8_bacteria_32px.png" />
+    <None Include="Resources\Sound1.wav" />
+    <None Include="Resources\Sound2.wav" />
+    <None Include="Resources\zilverk bailando xd.mp4" />
+    <None Include="Resources\xd.mp4" />
+    <None Include="Resources\September %28Bdash x Miranda Derrick%29.mp4" />
+    <None Include="Resources\Chi chi chimo chi.mp4" />
+    <None Include="Resources\icons8_Menu_32px.png" />
+    <None Include="Resources\icons8_user_account_48px.png" />
+    <None Include="Resources\icons8_user_32px.png" />
+    <None Include="Resources\icons8_user_48px_1.png" />
+    <None Include="Resources\Login.png" />
+    <None Include="Resources\icons8_shutdown_32px.png" />
+    <None Include="Resources\Register.png" />
+    <None Include="Resources\icons8_back_32px.png" />
+    <None Include="Resources\icons8_form_127px_1.png" />
+    <None Include="Resources\icons8_System_Information_127px.png" />
+    <None Include="Resources\icons8_System_Information_127px_2.png" />
+    <None Include="Resources\icons8_permanent_job_32px.png" />
+    <None Include="Resources\icons8_permanent_job_32px_1.png" />
+    <None Include="Resources\icons8_permanent_job_32px_2.png" />
+    <None Include="Resources\icons8_Menu_32px_1.png" />
+    <None Include="Resources\icons8_teacher_32px.png" />
+    <None Include="Resources\icons8_student_male_32px.png" />
+    <None Include="Resources\icons8_student_male_32px_1.png" />
+    <None Include="Resources\icons8_teacher_32px_1.png" />
+    <None Include="Resources\icons8_employee_32px.png" />
+    <None Include="Resources\icons8_company_32px.png" />
+    <None Include="Resources\icons8_windows8_tablet_32px.png" />
+    <None Include="Resources\icons8_male_user_32px.png" />
+    <None Include="Resources\icons8_Pen_32px.png" />
+    <None Include="Resources\icons8_sugar_cubes_32px.png" />
+    <None Include="Resources\icons8_heat_map_32px.png" />
+    <None Include="Resources\icons8_level_1_32px_1.png" />
+    <None Include="Resources\icons8_circled_3_c_32px.png" />
+    <None Include="Resources\icons8_Circled_5_32px.png" />
+    <None Include="Resources\icons8_Circled_8_32px.png" />
+    <None Include="Resources\icons8_rounded_square_32px.png" />
+    <None Include="Resources\icons8_triangle_32px.png" />
+    <None Include="Resources\icons8_Circle_32px.png" />
+    <None Include="Resources\icons8_filled_circle_32px.png" />
+    <None Include="Resources\icons8_ellipse_32px.png" />
+    <None Include="Resources\icons8_add_database.ico" />
+    <None Include="Resources\icons8_add_fingerprint.ico" />
+    <None Include="Resources\icons8_stack.ico" />
+    <None Include="Resources\P5_Limpiar.png" />
+    <None Include="Resources\icons8_Erase_32px.png" />
+    <None Include="Resources\icons8_fill_color_32px.png" />
+    <None Include="Resources\icons8_Ruler_32px.png" />
+    <None Include="Resources\Paleta de colores.png" />
+    <None Include="Resources\color_palette.png" />
+    <None Include="Resources\icons8_save_32px.png" />
     <Content Include="src\CustomControlsDLL.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -221,5 +662,38 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Class\P1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('packages\Fody.4.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.4.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
+  </Target>
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('packages\Fody.4.0.2\build\Fody.targets')" />
 </Project>

@@ -6,13 +6,16 @@
       <Value Profile="(Default)">17, 16, 29</Value>
     </Setting>
     <Setting Name="ButtonsBackColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">17, 16, 40</Value>
+      <Value Profile="(Default)">17, 16, 70</Value>
     </Setting>
     <Setting Name="LettersForeColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="SubMenusBackColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">17, 16, 29</Value>
+    </Setting>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

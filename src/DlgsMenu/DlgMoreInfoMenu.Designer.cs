@@ -59,7 +59,7 @@
             // 
             this.BtnCLoseMoreInfoMenu.FlatAppearance.BorderSize = 0;
             this.BtnCLoseMoreInfoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCLoseMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.icons8_sphere_18px;
+            this.BtnCLoseMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.Rojo;
             this.BtnCLoseMoreInfoMenu.Location = new System.Drawing.Point(3, 3);
             this.BtnCLoseMoreInfoMenu.Name = "BtnCLoseMoreInfoMenu";
             this.BtnCLoseMoreInfoMenu.Size = new System.Drawing.Size(18, 18);
@@ -72,7 +72,7 @@
             this.BtnMaximizedMoreInfoMenu.Enabled = false;
             this.BtnMaximizedMoreInfoMenu.FlatAppearance.BorderSize = 0;
             this.BtnMaximizedMoreInfoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMaximizedMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.icons8_sphere_18px_1;
+            this.BtnMaximizedMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.Amarillo;
             this.BtnMaximizedMoreInfoMenu.Location = new System.Drawing.Point(27, 3);
             this.BtnMaximizedMoreInfoMenu.Name = "BtnMaximizedMoreInfoMenu";
             this.BtnMaximizedMoreInfoMenu.Size = new System.Drawing.Size(18, 18);
@@ -84,7 +84,7 @@
             this.BtnMinimizedMoreInfoMenu.Enabled = false;
             this.BtnMinimizedMoreInfoMenu.FlatAppearance.BorderSize = 0;
             this.BtnMinimizedMoreInfoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimizedMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.icons8_sphere_18px_2;
+            this.BtnMinimizedMoreInfoMenu.Image = global::POO22B_FPA.Properties.Resources.Verde;
             this.BtnMinimizedMoreInfoMenu.Location = new System.Drawing.Point(51, 3);
             this.BtnMinimizedMoreInfoMenu.Name = "BtnMinimizedMoreInfoMenu";
             this.BtnMinimizedMoreInfoMenu.Size = new System.Drawing.Size(18, 18);
@@ -127,7 +127,7 @@
             // 
             // PtbVSMoreInfoMenu
             // 
-            this.PtbVSMoreInfoMenu.BackgroundImage = global::POO22B_FPA.Properties.Resources.icons8_Visual_Studio_32px;
+            this.PtbVSMoreInfoMenu.BackgroundImage = global::POO22B_FPA.Properties.Resources.VisualStudio;
             this.PtbVSMoreInfoMenu.Location = new System.Drawing.Point(21, 91);
             this.PtbVSMoreInfoMenu.Name = "PtbVSMoreInfoMenu";
             this.PtbVSMoreInfoMenu.Size = new System.Drawing.Size(32, 32);
@@ -136,7 +136,7 @@
             // 
             // PtbCSharpMoreInfoMenu
             // 
-            this.PtbCSharpMoreInfoMenu.BackgroundImage = global::POO22B_FPA.Properties.Resources.icons8_c_sharp_logo_2_32px;
+            this.PtbCSharpMoreInfoMenu.BackgroundImage = global::POO22B_FPA.Properties.Resources.Csharp;
             this.PtbCSharpMoreInfoMenu.Location = new System.Drawing.Point(21, 148);
             this.PtbCSharpMoreInfoMenu.Name = "PtbCSharpMoreInfoMenu";
             this.PtbCSharpMoreInfoMenu.Size = new System.Drawing.Size(32, 32);
